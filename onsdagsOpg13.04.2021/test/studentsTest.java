@@ -7,7 +7,7 @@ class studentsTest {
 
   @Test
   public void registerGradeWith4() {
-    Student student = new Student();
+    Student student = new Student("Jens");
     student.registerGrade(4);
     // Arrange
 
@@ -22,7 +22,7 @@ class studentsTest {
   }
   @Test
   public void registerGradeWithMinus3() {
-    Student student = new Student();
+    Student student = new Student("Jens");
     student.registerGrade(-3);
     // Arrange
 
@@ -38,7 +38,7 @@ class studentsTest {
 
   @Test
   public void registerGradeWith6() {
-    Student student = new Student();
+    Student student = new Student("Jens");
     //student.registerGrade(4);
     // Arrange
     assertThrows(IllegalArgumentException.class, () -> student.registerGrade(6));
@@ -46,21 +46,21 @@ class studentsTest {
 
   @Test
   public void registerGradeWithMinus1() {
-    Student student = new Student();
+    Student student = new Student("Jens");
     //student.registerGrade(4);
     // Arrange
     assertThrows(IllegalArgumentException.class, () -> student.registerGrade(-1));
   }
   @Test
   public void registerGradeWithMinus2() {
-    Student student = new Student();
+    Student student = new Student("Jens");
     //student.registerGrade(4);
     // Arrange
     assertThrows(IllegalArgumentException.class, () -> student.registerGrade(-2));
   }
   @Test
   public void registerGradeWithAbove12() {
-    Student student = new Student();
+    Student student = new Student("Jens");
     //student.registerGrade(4);
     // Arrange
     assertThrows(IllegalArgumentException.class, () -> student.registerGrade(13));
@@ -79,7 +79,7 @@ class studentsTest {
 
   //@Test
   public void part1Minus() {
-    Student student = new Student();
+    Student student = new Student("Jens");
     // Arranger
 
     // Handling

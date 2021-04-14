@@ -3,8 +3,14 @@ import java.util.Scanner;
 public class Student {
   private int number;
   private int grade;
-
+  private String name;
   Scanner scan = new Scanner(System.in);
+
+
+  public Student(String name) {
+  this.name = name;
+  }
+
 
 
   public int readGrade() {
@@ -26,7 +32,16 @@ public class Student {
       grade = number;
     }
   }
-  public void pintStundesGrade(int grade) {
+  public void pintStundesGrade() {
+
+
+    int[] arrayGrade = new int[7];
+
+    for (int i = 0; i < arrayGrade.length; i++) {
+      System.out.println("Enter a number");
+      arrayGrade[i] = scan.nextInt();
+    }
+    System.out.println(arrayGrade);
 
   }
 
