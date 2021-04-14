@@ -16,13 +16,15 @@ class studentsTest {
   }
   @Test
   public void part1Minus() {
+    Student student = new Student();
     // Arranger
-    double forventet = 2.5;
+
     // Handling
-    double faktiske = (-10*0.25);
+
 
     // Hævde
-    assertEquals(forventet, faktiske);
+    assertThrows(IllegalArgumentException.class, () -> student.setNumber(-2));
+
   }
 
 
