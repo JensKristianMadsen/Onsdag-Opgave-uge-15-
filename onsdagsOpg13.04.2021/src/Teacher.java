@@ -21,7 +21,9 @@ public class Teacher {
     if (number < -3 || number == -2 || number == -1 || number == 1 || number == 3 || number == 5
         || number == 6 || number == 8 || number == 9 || number == 11 || number > 12) {
 
-      throw new IllegalArgumentException("fejl");
+      //throw new IllegalArgumentException("fejl");
+      System.out.println("fejl");
+
 
     }
 
