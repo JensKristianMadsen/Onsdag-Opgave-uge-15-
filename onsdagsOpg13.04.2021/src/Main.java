@@ -4,6 +4,7 @@ public class Main {
     Teacher teacher = new Teacher();
     teacher.registerGrades(student);
     System.out.println(student);
+    //h
 
   }
 }
