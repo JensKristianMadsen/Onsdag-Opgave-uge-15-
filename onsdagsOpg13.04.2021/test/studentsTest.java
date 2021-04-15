@@ -7,30 +7,30 @@ class studentsTest {
 
   @Test
   public void registerGradeWith4() {
-    Student student = new Student("Jens");
-    student.registerGrade(4);
+    Teacher teacher = new Teacher();
+
     // Arrange
 
     int expected = 4;
 
     // Act
 
-    int actual = student.getGrade();
+    int actual = teacher.validateGrade(4);
 
     // Assert
     assertEquals(expected, actual);
   }
   @Test
   public void registerGradeWithMinus3() {
-    Student student = new Student("Jens");
-    student.registerGrade(-3);
+    Teacher teacher = new Teacher();
+
     // Arrange
 
     int expected = -3;
 
     // Act
 
-    int actual = student.getGrade();
+    int actual = teacher.validateGrade(-3);
 
     // Assert
     assertEquals(expected, actual);
@@ -38,34 +38,39 @@ class studentsTest {
 
   @Test
   public void registerGradeWith6() {
-    Student student = new Student("Jens");
-    //student.registerGrade(4);
+    Teacher teacher = new Teacher();;
+
     // Arrange
-    assertThrows(IllegalArgumentException.class, () -> student.registerGrade(6));
+
+    assertThrows(IllegalArgumentException.class, () -> teacher.validateGrade(6));
   }
 
   @Test
   public void registerGradeWithMinus1() {
-    Student student = new Student("Jens");
-    //student.registerGrade(4);
+    Teacher teacher = new Teacher();
+
     // Arrange
-    assertThrows(IllegalArgumentException.class, () -> student.registerGrade(-1));
-  }
-  @Test
-  public void registerGradeWithMinus2() {
-    Student student = new Student("Jens");
-    //student.registerGrade(4);
-    // Arrange
-    assertThrows(IllegalArgumentException.class, () -> student.registerGrade(-2));
-  }
-  @Test
-  public void registerGradeWithAbove12() {
-    Student student = new Student("Jens");
-    //student.registerGrade(4);
-    // Arrange
-    assertThrows(IllegalArgumentException.class, () -> student.registerGrade(13));
+    assertThrows(IllegalArgumentException.class, () -> teacher.validateGrade(-1));
   }
 
+  @Test
+  public void registerGradeWithMinus4() {
+    Teacher teacher = new Teacher();
+
+    // Arrange
+    assertThrows(IllegalArgumentException.class, () -> teacher.validateGrade(-4));
+  }
+
+  @Test
+  public void registerGradeWithAbove12() {
+    Teacher teacher = new Teacher();
+
+    // Arrange
+    assertThrows(IllegalArgumentException.class, () -> teacher.validateGrade(13));
+  }
+  /*
+// Ekstra opgave(hvis I har tid til overs):En af eksaminerne er todelt: 1. delprøve vægter med 25 % og 2. delprøvevægter med 75 %.5.Der skal minimum skrives unit tests til én metode.AfleveringEt link til GitHub repository og GitHub navn på jer begge.Her skal det gerne fremgå af historikken,
+// at I begge har været aktive med at pushe ændringer til github (kan ses påunder Insightpå repository).
   @Test
   public void part1() {
     // Arranger
@@ -76,6 +81,7 @@ class studentsTest {
     // Hævde
     assertEquals(forventet, faktiske);
   }
+  /*
 
   //@Test
   public void part1Minus() {
@@ -97,5 +103,5 @@ class studentsTest {
 
   @Test
   public void math() {
-  }
+  }*/
 }

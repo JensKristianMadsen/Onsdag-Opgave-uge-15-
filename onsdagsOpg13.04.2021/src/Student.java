@@ -1,85 +1,39 @@
-import java.util.Scanner;
+import java.util.Arrays;
+
 
 public class Student {
-  private int number;
-  private int grade;
   private String name;
-  Scanner scan = new Scanner(System.in);
+  private int[] grades;
 
 
-  public Student(String name) {
-  this.name = name;
+  public Student(String name, int exams) {
+    this.name = name;
+    this.grades = new int[exams];
   }
 
-
-
-  public int readGrade() {
-    System.out.println("Insert point from grade");
-    int number = scan.nextInt();
-
-    return number;
+  public String getName() {
+    return name;
   }
 
-  public void registerGrade(int number) {
-
-    if (number < -3 || number == -2 || number == -1 || number == 1 || number == 3 || number == 5
-        || number == 6 || number == 8 || number == 9 || number == 11 || number > 12) {
-
-      throw new IllegalArgumentException("fejl");
-
-    } else {
-
-      grade = number;
-    }
-  }
-  public void pintStundesGrade() {
-
-
-    int[] arrayGrade = new int[7];
-
-    for (int i = 0; i < arrayGrade.length; i++) {
-      System.out.println("Enter a number");
-      arrayGrade[i] = scan.nextInt();
-    }
-    System.out.println(arrayGrade);
-
+  public void setName(String name) {
+    this.name = name;
   }
 
-
-  public int getGrade() {
-    return grade;
-  }
-/*
-  public void setNumber(int number) {
-    this.number = number;
+  public int[] getGrades() {
+    return grades;
   }
 
-  public static double part1() {
-    System.out.println("Insert point from part 1");
-    int number = scan.nextInt();
-    if (number < 0) {
-      throw new IllegalArgumentException("fejl");
-    }
-    double resultat1 = number * 0.25;
-    System.out.println(resultat1);
-
-    return resultat1;
+  public void setGrades(int[] grades) {
+    this.grades = grades;
   }
 
-  public static double part2() {
-    System.out.println("Insert point from part 2");
-    int number2 = scan.nextInt();
-    double part2 = number2 * 0.75;
-    System.out.println(part2);
-
-    return part2;
+  @Override
+  public String toString() {
+    return "Student{" +
+        "name='" + name + '\'' +
+        ", grades=" + Arrays.toString(grades) +
+        '}';
   }
-
-  public static void math(double part1, double part2) {
-
-    double mathTotal = part1 + part2;
-    System.out.println("Math Total: " + mathTotal);
-  }*/
 }
 
 
