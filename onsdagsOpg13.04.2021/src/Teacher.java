@@ -1,7 +1,8 @@
 import java.util.Scanner;
 
 public class Teacher {
-  Scanner scanner = new Scanner(System.in);
+  UI ui = new UI();
+
 
 
   public void registerGrades(Student student) {
@@ -10,9 +11,12 @@ public class Teacher {
 
     for (int i = 0; i < arrayGrade.length; i++) {
 
-      System.out.println("Enter grades: ");
-      int c = scanner.nextInt();
-      if (validateGrade(c) > 0)
+
+      int c =ui.getInt("Enter Grade");
+      while (validateGrade(c) < 0) {
+
+        c = ui.getInt("try agein");
+      }
       arrayGrade[i] = c;
     }
   }
@@ -22,7 +26,7 @@ public class Teacher {
     if (number < -3 || number == -2 || number == -1 || number == 1 || number == 3 || number == 5
         || number == 6 || number == 8 || number == 9 || number == 11 || number > 12) {
 
-      System.out.println("fejl");
+      ui.printMesseg("fejl");
       return -1;
 
     }
