@@ -1,8 +1,5 @@
-import java.util.Scanner;
-
 public class Teacher {
   UI ui = new UI();
-
 
 
   public void registerGrades(Student student) {
@@ -10,15 +7,15 @@ public class Teacher {
     int[] arrayGrade = student.getGrades();
 
     for (int i = 0; i < arrayGrade.length; i++) {
-
-
-      int c =ui.getInt("Enter Grade");
+      int c = ui.getInt("Enter Grade: ");
       while (validateGrade(c) < 0) {
-
-        c = ui.getInt("try agein");
+        ui.printErrorMessage("You enter: " + c + " Is not a grade");
+        c = ui.getInt("Try agein: ");
       }
       arrayGrade[i] = c;
+
     }
+    student.setGrades(arrayGrade);
   }
 
   public int validateGrade(int number) {
@@ -26,11 +23,9 @@ public class Teacher {
     if (number < -3 || number == -2 || number == -1 || number == 1 || number == 3 || number == 5
         || number == 6 || number == 8 || number == 9 || number == 11 || number > 12) {
 
-      ui.printMesseg("fejl");
+      ui.printMessage("fejl");
       return -1;
-
     }
-
     return 1;
   }
 }
