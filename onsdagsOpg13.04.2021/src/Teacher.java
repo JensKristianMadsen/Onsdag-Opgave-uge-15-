@@ -7,10 +7,10 @@ public class Teacher {
     int[] arrayGrade = student.getGrades();
 
     for (int i = 0; i < arrayGrade.length; i++) {
-      int c = ui.getInt("Enter Grade: ");
+      int c = ui.getInt("Enter Grade: " + "\n");
       while (validateGrade(c) < 0) {
-        ui.printErrorMessage("You enter: " + c + " Is not a grade");
-        c = ui.getInt("Try agein: ");
+        ui.printErrorMessage("You enter: " + c + " Is not a grade" + "\n");
+        c = ui.getInt("Try agein: " + "\n");
       }
       arrayGrade[i] = c;
 
